@@ -1,33 +1,49 @@
 <template>
-  <div>
     <div class="swiper-container">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide"><img src="../images/箭头.png" alt="箭头"></div>
         <div class="swiper-slide">Slide 2</div>
         <div class="swiper-slide">Slide 3</div>
       </div>
-      <!-- 如果需要分页器 -->
-      <div class="swiper-pagination"></div>
-
-      <!-- 如果需要导航按钮 -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-
-      <!-- 如果需要滚动条 -->
-      <div class="swiper-scrollbar"></div>
     </div>
-  </div>
 </template>
 <script>
-var swiper = new Swiper(".swiper-container", {
-  pagination: ".swiper-pagination",
-  paginationClickable: true,
-  direction: "vertical"
-});
-
 export default {
   data() {
-    return {};
-  }
-};
+    return {}
+  }}
 </script>
+<style lang="scss" scoped>
+.swiper-container{
+  width: 100%;
+  height: 100%;
+  .swiper-slide{
+    &:first-child{
+      position: relative;
+      background: url("../images/中秋.jpg") no-repeat center top;
+      background-size: 100%;
+      img{
+        position: absolute;
+        width: 70px;
+        bottom: 60px;
+        animation: arrows infinite 2s;
+      }
+    }
+    background-color:#ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @keyframes arrows {
+    0%{
+      bottom: 70px;
+    }
+    50%{
+      bottom: 40px;
+    }
+    100%{
+      bottom: 70px;
+    }
+  }
+}
+</style>
