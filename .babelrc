@@ -1,0 +1,7 @@
+{
+  "presets": [],
+  "plugins": [
+    "transform-remove-strict-mode",
+    "@babel/proposal-class-properties"
+  ]
+}

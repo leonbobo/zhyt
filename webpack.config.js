@@ -1,6 +1,5 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const VueLoaderPlugin = require("vue-loader/lib/plugin");
 
 
 module.exports = {
@@ -14,13 +13,11 @@ module.exports = {
       template: path.join(__dirname, "src", "index.html"),
       filename: "index.html"
     }),
-    new VueLoaderPlugin()
   ],
   module: {
     rules: [
       { test: /\.css$/, use: ["style-loader", "css-loader"] },
       { test: /\.scss$/, use: ["style-loader", "css-loader", "sass-loader"] },
-      { test: /\.vue$/, use: "vue-loader" },
       {
         test: /\.(jpg|png|jpeg|bmp|gif)$/,
         use: ["url-loader?limit=1000&name=[hash:8]-[name].[ext]"]
@@ -29,12 +26,12 @@ module.exports = {
         test: /\.(ttf|woff2|woff|eot|svg)$/,
         use: "url-loader"
       },
-      // {
-      //   test: /\.js$/,
-      //   use: "babel-loader",
-      //   //  排除node_modules中的js
-      //   exclude: /node_modules/
-      // }
+      {
+        test: /\.js$/,
+        use: "babel-loader",
+        //  排除node_modules中的js
+        exclude: /node_modules/
+      }
     ]
   }
 };

@@ -1,0 +1,219 @@
+html,
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  .swiper-slide {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      display: block;
+      position: absolute;
+    }
+    .arrows {
+      position: absolute;
+      width: 4rem;
+      bottom: 15rem;
+      animation: arrows infinite 1.5s;
+    }
+    @keyframes arrows {
+      0% {
+        bottom: 3.8rem;
+      }
+      50% {
+        bottom: 4.6rem;
+      }
+      100% {
+        bottom: 3.8rem;
+      }
+    }
+    &.page1 {
+      background: url("../images/page1/bg1.jpg") no-repeat;
+      background-size: 29rem;
+      background-position: center top;
+      .think-box {
+        position: relative;
+        width: 20rem;
+        height: 20rem;
+        .person{
+          width: 10rem;
+          top:1rem;
+          left: -5rem;
+        }
+        .think-container {
+          width: 16rem;
+          top: 6rem;
+          left:5rem;
+        }
+        .think-content {
+          width: 13rem;
+          top: 13rem;
+          left:6.5rem;
+        }
+      }
+    }
+    // &:nth-child(2) {
+    //   background: url("../images/page2/bg2.jpg") no-repeat center top;
+    //   background-size: 7.5rem 16rem;
+    //   .talkbox2 {
+    //     img {
+    //       position: absolute;
+    //     }
+    //     .car2 {
+    //       top: 12rem;
+    //       width: 20rem;
+    //       left: -15rem;
+    //     }
+    //     .role2 {
+    //       top: 10rem;
+    //       right: 4rem;
+    //       width: 10rem;
+    //     }
+    //     .think2 {
+    //       top: 0.5rem;
+    //       left: 0.5rem;
+    //       width: 18rem;
+    //       display: none;
+    //     }
+    //     .mark1 {
+    //       top: 11rem;
+    //       right: 2rem;
+    //       width: 3.5rem;
+    //       display: none;
+    //     }
+    //     .mark2 {
+    //       top: 28rem;
+    //       right: 0.2rem;
+    //       width: 10rem;
+    //       display: none;
+    //     }
+    //     .mark3 {
+    //       top: 24rem;
+    //       left: 6rem;
+    //       width: 10rem;
+    //       display: none;
+    //     }
+    //     .role2-1 {
+    //       top: 21rem;
+    //       right: 2rem;
+    //       width: 7rem;
+    //     }
+    //     .role2-2 {
+    //       top: 16rem;
+    //       right: 0rem;
+    //       width: 6rem;
+    //     }
+    //     .role2-3 {
+    //       top: 22rem;
+    //       left: 0rem;
+    //       width: 8rem;
+    //     }
+    //     .content2 {
+    //       top: 3rem;
+    //       left: 4rem;
+    //       width: 11rem;
+    //     }
+    //   }
+    // }
+    // &:nth-child(3) {
+    //   background: url("../images/page3/bg3.jpg") no-repeat center top;
+    //   background-size: 7.5rem 16rem 100%;
+    //   .talkbox3 {
+    //     .content3 {
+    //       position: absolute;
+    //       top: 3rem;
+    //       left: 3rem;
+    //       width: 13rem;
+    //       display: none;
+    //     }
+    //     .role3 {
+    //       position: absolute;
+    //       right: -7rem;
+    //       top: 1.8rem;
+    //       width: 22rem;
+    //     }
+    //     .think3 {
+    //       position: absolute;
+    //       left: 0;
+    //       top: 0;
+    //       width: 20rem;
+    //       display: none;
+    //     }
+    //     .aside3 {
+    //       position: absolute;
+    //       right: 7rem;
+    //       top: 28rem;
+    //       width: 12rem;
+    //       display: none;
+    //     }
+    //   }
+    //   .giftbox {
+    //     position: absolute;
+    //     left: 0;
+    //     height: 40%;
+    //     .car3 {
+    //       position: absolute;
+    //       top: 0;
+    //       left: 0;
+    //       width: 23rem;
+    //     }
+    //     .gift3 {
+    //       position: absolute;
+    //       width: 14rem;
+    //       top: 4.8rem;
+    //       left: 1rem;
+    //       animation: gift infinite 3s;
+    //     }
+    //     @keyframes gift {
+    //       0% {
+    //         transform: scale(0.9) rotate(-2deg);
+    //       }
+    //       50% {
+    //         transform: scale(1) rotate(2deg);
+    //       }
+    //       100% {
+    //         transform: scale(0.9) rotate(-2deg);
+    //       }
+    //     }
+    //   }
+    // }
+    // &:nth-child(4) {
+    //   .gezi {
+    //     position: absolute;
+    //     top: 30px;
+    //     left: 30px;
+    //     width: 10%;
+    //   }
+    //   background: url("../images/page4/bg4.jpg") no-repeat center top;
+    //   background-size: 7.5rem 16rem 100%;
+    // }
+    .getbook {
+      position: absolute;
+      display: block;
+      bottom: 50px;
+      width: 35%;
+      box-shadow: 5px 10px 9px black;
+      animation: btn infinite 1s;
+    }
+    @keyframes btn {
+      0% {
+        width: 35%;
+      }
+      50% {
+        width: 30%;
+      }
+      100% {
+        width: 35%;
+      }
+    }
+    
+  }
+}
