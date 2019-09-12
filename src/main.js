@@ -12,7 +12,7 @@ load()
 function load(){
   setTimeout(()=>{
     oneSwiper.init()
-    $(".load-container").hide()
+    $(".load-container").hide(500)
   },2000)
 }
 var oneSwiper = new swiper(".swiper-one", {

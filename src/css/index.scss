@@ -14,9 +14,9 @@ body {
   height: 100%;
   z-index: 99;
   background-image: url(../images/loading_bg.jpg);
-  background-size: 100%;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
-  background-position: left bottom;
+  background-position: center top;
   overflow: hidden;
   .load-warrper {
     position: absolute;
