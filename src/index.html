@@ -2,66 +2,294 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta content="email=no" name="format-detection" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script src="./js/swiper.animate1.0.3.min.js"></script>
     <title>中秋贺卡</title>
   </head>
   <body>
-    <div class="swiper-container">
+    <div class="load-container">
+      <div class="load-warrper">
+        <div class="load-icon"></div>
+        <div class="load-title">加载中</div>
+      </div>
+    </div>
+    <!-- 第一模块 -->
+    <div class="swiper-container swiper-one">
       <div class="swiper-wrapper">
         <!-- 第一页 -->
-        <div class="swiper-slide page1">
+        <div
+          data-background="./images/page1/bg1.jpg"
+          class="swiper-slide swiper-lazy page1 "
+        >
           <div class="think-box">
-            <img src="./images/page1/人.png" class="person"/>
-            <img src="./images/page1/pg1-思考.png" class=" ani think-container" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"/>
-            <img src="./images/page1/辛苦了大半年.png" class="ani think-content" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" />
+            <img src="./images/page1/人.png" class="person" />
+            <img
+              src="./images/page1/pg1-思考.png"
+              class=" ani think-container"
+              swiper-animate-effect="fadeIn"
+              swiper-animate-duration="0.5s"
+              swiper-animate-delay="0.3s"
+            />
+            <img
+              src="./images/page1/辛苦了大半年.png"
+              class="ani think-content"
+              swiper-animate-effect="fadeIn"
+              swiper-animate-duration="0.5s"
+              swiper-animate-delay="0.3s"
+            />
           </div>
-          <img src="./images/箭头.png" alt="箭头" class="arrows" />
-        </div><div class="swiper-slide page1">
-            <div class="think-box">
-              <img src="./images/page1/人.png" class="person"/>
-              <img src="./images/page1/pg1-思考.png" class="think-container" />
-              <img src="./images/page1/辛苦了大半年.png" class="ani think-content" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" />
-            </div>
-            <img src="./images/箭头.png" alt="箭头" class="arrows" />
-          </div>
+          <img
+            src="./images/箭头.png"
+            alt="箭头"
+            class="arrows ani"
+            swiper-animate-effect="slideInDown"
+            swiper-animate-duration="1s"
+            swiper-animate-delay="0s"
+          />
+          <div class="swiper-lazy-preloader"></div>
+        </div>
+
         <!-- 第二页 -->
-        <div class="swiper-slide page2"></div>
-        <!--   <div class="talkbox2">
-            <img src="./images/主角2.png" class="role2" />
-            <img src="./images/车2.png" class="car2" />
-            <img src="./images/666.png" class="mark1" />
-            <img src="./images/2字1.png" class="mark2" />
-            <img src="./images/2字2.png" class="mark3" />
-            <img src="./images/后人2.png" class="role2-2" />
-            <img src="./images/前人2.png" class="role2-1" />
-            <img src="./images/双人2.png" class="role2-3" />
-            <img src="./images/思考2.png" class="think2" />
-            <img src="./images/可谓事半功倍啊.png" class="content2" />
+        <div
+          data-background="./images/page2/bg2.jpg"
+          class="swiper-slide page2 swiper-lazy"
+        >
+          <div class="think-box">
+            <img src="./images/page2/主角.png" class="leading" />
+            <img src="./images/page2/车.png" class="car" />
+            <img src="./images/page2/后人.png" class="role1" />
+            <img src="./images/page2/前人.png" class="role2" />
+            <img
+              src="./images/page2/双人.png"
+              class="role3 ani"
+              swiper-animate-effect="  slideInUp "
+              swiper-animate-duration="1.5s"
+              swiper-animate-delay="0.5s"
+            />
+            <img
+              src="./images/page2/思考.png"
+              class="think-container ani"
+              swiper-animate-effect="  bounceIn "
+              swiper-animate-duration="1.5s"
+              swiper-animate-delay="0.2s"
+            />
+            <img
+              src="./images/page2/可谓事半功倍啊.png"
+              class="think-content ani"
+              swiper-animate-effect="  bounceIn "
+              swiper-animate-duration="1.5s"
+              swiper-animate-delay="0.2s"
+            />
+            <img
+              src="./images/page2/666.png"
+              class="think-mark1 ani"
+              swiper-animate-effect="  rotateInUpLeft "
+              swiper-animate-duration="1.5s"
+              swiper-animate-delay="0.4s"
+            />
+            <img
+              src="./images/page2/mark2.png"
+              class="think-mark2 ani"
+              swiper-animate-effect="  fadeInUp "
+              swiper-animate-duration="1.5s"
+              swiper-animate-delay="1s"
+            />
+            <img
+              src="./images/page2/mark3.png"
+              class="think-mark3 ani"
+              swiper-animate-effect="  lightSpeedIn "
+              swiper-animate-duration="1.5s"
+              swiper-animate-delay="2s"
+            />
           </div>
-          <img src="./images/箭头.png" alt="箭头" class="arrows" />
+          <img
+            src="./images/箭头.png"
+            alt="箭头"
+            class="arrows ani"
+            swiper-animate-effect="slideInDown"
+            swiper-animate-duration="1s"
+            swiper-animate-delay="0s"
+          />
+
+          <div class="swiper-lazy-preloader"></div>
+        </div>
+        <!-- 第三页 -->
+        <div
+          data-background="./images/page3/bg3.jpg"
+          class="swiper-slide page3 swiper-lazy"
+        >
+          <div class="car-box">
+            <img src="./images/page3/车.png" class="car" />
+            <img
+              src="./images/page3/礼物.png"
+              class="gift ani"
+              swiper-animate-effect="tada"
+              swiper-animate-duration="1s"
+              swiper-animate-delay="0s"
+            />
+          </div>
+          <div class="think-box">
+            <img
+              src="./images/page3/主角.png"
+              class="person ani"
+              swiper-animate-effect="bounceInRight"
+              swiper-animate-duration=".5s"
+              swiper-animate-delay="0s"
+            />
+            <img
+              src="./images/page3/旁白.png"
+              class="aside ani"
+              swiper-animate-effect="bounceInRight"
+              swiper-animate-duration=".5s"
+              swiper-animate-delay="1s"
+            />
+            <img
+              src="./images/page3/思考.png"
+              class="think-container ani"
+              swiper-animate-effect="bounceIn"
+              swiper-animate-duration=".5s"
+              swiper-animate-delay="0.5s"
+            />
+            <img
+              src="./images/page3/返乡路途遥远.png"
+              class="think-content ani"
+              swiper-animate-effect="bounceIn"
+              swiper-animate-duration=".5s"
+              swiper-animate-delay="0.5s"
+            />
+          </div>
+          <img
+            src="./images/箭头.png"
+            alt="箭头"
+            class="arrows ani"
+            swiper-animate-effect="slideInDown"
+            swiper-animate-duration="1s"
+            swiper-animate-delay="0s"
+          />
+          <div class="swiper-lazy-preloader"></div>
+        </div>
+        <!-- 第四页 -->
+        <div
+          data-background="./images/page4/bg4.jpg"
+          class="swiper-slide  swiper-no-swiping page4 swiper-lazy "
+        >
+          <img src="./images/page4/月亮.png" class="moon" />
+          <img src="./images/page4/车.png" class="car" />
+          <img
+            src="./images/page4/飞鸽传书.png"
+            alt="鸽子"
+            class="bird ani"
+            swiper-animate-effect="fadeInLeft"
+            swiper-animate-duration="0.5s"
+            swiper-animate-delay="0.3s"
+          />
+          <div
+            class="ani think-box"
+            swiper-animate-effect="bounceIn"
+            swiper-animate-duration=".5s"
+            swiper-animate-delay="0.5s"
+          >
+            <img src="./images/page4/对话框.png " class="think-container" />
+            <img src="./images/page4/家书已经寄出.png" class="think-content" />
+          </div>
+          <img
+            src="./images/page4/开始定制家书.png"
+            alt="家书"
+            class="makebook ani "
+            id="start_btn"
+            swiper-animate-effect="pulse"
+            swiper-animate-duration=".5s"
+            swiper-animate-delay="0.5s"
+          />
+
+          <div class="swiper-lazy-preloader"></div>
         </div>
 
-        <div class="swiper-slide page3">
-          <div class="giftbox">
-            <img src="./images/车3.png" class="car3" />
-            <img src="./images/礼物3.png" class="gift3" />
-          </div>
-          <div class="talkbox3">
-            <img src="./images/旁白3.png" class="aside3" />
-            <img src="./images/主角3.png" class="role3" />
-            <img src="./images/思考3.png" class="think3" />
-            <img src="./images/返乡路途遥远.png" class="content3" />
-          </div>
+        <!-- 第五页 -->
+          <div
+            data-background="./images/page5/bg5.jpg"
+            class="swiper-slide swiper-no-swiping page5 swiper-lazy "
+          >
+            <img
+              src="./images/page5/按钮.png"
+              alt="家书"
+              class="makepic ani "
+              id="start_btn"
+              swiper-animate-effect="pulse"
+              swiper-animate-duration=".5s"
+              swiper-animate-delay="0.5s"
+            />
+            <img src="./images/page5/定制家书.png" class="title" />
+            <img src="./images/page5/月亮.png" class="moon" />
+            <img src="./images/page4/飞鸽传书.png" class="bird" />
 
-          <img src="./images/箭头.png" alt="箭头" class="arrows" />
+            <div class="text-container">
+              <input
+                type="text"
+                class="text1"
+                placeholder="输 入 你 想 说 的 话"
+                maxlength="13"
+                autofocus
+              />
+              <input type="text" maxlength="15" />
+              <input type="text" maxlength="15" />
+              <input type="text" maxlength="15" />
+              <input
+                type="text"
+                placeholder="— 署名 "
+                maxlength="4"
+                class="sign"
+              />
+            </div>
+            <div id="select-pic">
+              <div class="swiper-container swiper-two">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide pg1">
+                    <img src="./images/page5/家书封面1.jpg" />
+                  </div>
+                  <div class="swiper-slide pg2">
+                    <img src="./images/page5/家书封面2.jpg" />
+                  </div>
+                  <div class="swiper-slide pg3">
+                    <img src="./images/page5/家书封面3.jpg" />
+                  </div>
+                  <div class="swiper-slide pg4">
+                    <img src="./images/page5/家书封面4.jpg" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          <div class="swiper-lazy-preloader"></div>
         </div>
 
-        <div class="swiper-slide page4">
-          <img src="./images/飞鸽传书.png" alt="鸽子" class="gezi" />
-          <img src="./images/开始定制家书.png" alt="家书" class="getbook" />
-        </div> -->
+        <!-- 第六页 -->
+        <div class="swiper-slide  page6 swiper-no-swiping">
+            <img data-src="./images/bg1.jpg" class="swiper-lazy" width="100%" />
+          <div class="swiper-lazy-preloader"></div>
+        </div>
+        <!-- 第七页 -->
+        <div class="swiper-slide  page7 swiper-no-swiping">
+            <img data-src="./images/bg2.jpg" class="swiper-lazy" width="100%" />
+          <div class="swiper-lazy-preloader"></div>
+        </div>
+        <!-- 第八页 -->
+        <div class="swiper-slide page8 swiper-no-swiping">
+            <img data-src="./images/bg3.jpg" class="swiper-lazy" width="100%" />
+          <div class="swiper-lazy-preloader"></div>
+        </div>
+        <!-- 第九页 -->
+        <div class="swiper-slide page9 swiper-no-swiping">
+            <img data-src="./images/bg4.jpg" class="swiper-lazy" width="100%" />
+          <div class="swiper-lazy-preloader"></div>
+        </div>
       </div>
     </div>
   </body>
