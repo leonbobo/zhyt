@@ -8,21 +8,31 @@ import $ from "jquery";
 import swiper from "swiper";
 
 // 第一模块
-load()
-function load(){
-  setTimeout(()=>{
-    oneSwiper.init()
-    $(".load-container").hide(500)
-  },2000)
+const heightOutput = document.querySelector("#height");
+const widthOutput = document.querySelector("#width");
+
+function reportWindowSize() {
+  heightOutput.textContent = window.innerHeight;
+  widthOutput.textContent = window.innerWidth;
 }
+window.addEventListener("resize", reportWindowSize);
+load();
+function load() {
+  $("body").css("overflow", "hidden");
+  setTimeout(() => {
+    $(".load-container").hide(500);
+    oneSwiper.init();
+  }, 1000);
+}
+
 var oneSwiper = new swiper(".swiper-one", {
   direction: "vertical",
   init: false,
   initialSlide: 0,
-  // effect: "slide",
+  effect: "slide",
   speed: 500,
   lazy: {
-    loadPrevNext: true,
+    loadPrevNext: true
   },
   on: {
     init() {
@@ -54,26 +64,25 @@ var twoSwiper = new swiper(".swiper-two", {
   },
   loop: true,
   slidesPerView: 4,
-  spaceBetween : 10,
+  spaceBetween: 10,
   centeredSlides: true,
   slideToClickedSlide: true,
   noSwiping: false,
-  
+  lazy: {
+    loadPrevNext: true
+  },
   on: {
-    init() {
-    },
-    slideChangeTransitionStart() {
-    },
+    init() {},
+    slideChangeTransitionStart() {},
     slideChangeTransitionEnd: function() {},
     slideChange: function() {
       var slideIndex = (this.activeIndex % 4) + 1;
-      console.log(slideIndex);
-      var imgPath = "url('./images/page5/封面" + slideIndex + ".png') no-repeat";
+      var imgPath =
+        "url('./images/page5/封面" + slideIndex + ".png') no-repeat";
       $(".page5 .text-container").css({
         background: imgPath,
         "background-size": "100%"
       });
-      
     }
   }
 });
@@ -86,11 +95,53 @@ $(".makepic").on("click", () => {
   oneSwiper.slideTo(toIndex);
 });
 
-$("#start_btn").on("click",() => {
+$("#start_btn").on("click", () => {
   oneSwiper.slideNext(0);
   twoSwiper.init();
 });
 
+var test = document.querySelector(".text-container");
+var pg5 = document.querySelector(".page5");
+// $("input").on("blur",function(){
+//     setTimeout(function(){
+//         // oneSwiper.slideNext(0)
+//     },100)
+// })
+// .on('focus',function(){
+//   this.scrollIntoViewIfNeeded();
+//   this.scrollIntoView();
+//     var clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
+//     var offsetTop = $(this).offset().top - (clientHeight / 4);
+//     setTimeout(function(){
+//         window.scrollTo(0,offsetTop);
+//         document.activeElement.scrollIntoViewIfNeeded();
+//           document.activeElement.scrollIntoView();
+//     },100)
+// })
+$("input")
+  .on("focus", function() {
+    setTimeout(function() {
+      test.scrollIntoView(true);
+      test.scrollIntoViewIfNeeded(true);
+    }, 100);
+  })
+  .on("blur", function() {
+    setTimeout(function() {
+      pg5.scrollIntoView(true);
+      pg5.scrollIntoViewIfNeeded(true);
+    }, 100);
+  });
+
+// function changefocus(){
+//     var u =  navigator.userAgent, app =  navigator.appVersion;
+//     var isAndroid =  u.indexOf('Android') > -1 ||  u.indexOf('Linux') > -1;
+//     if(isAndroid){
+//       setTimeout(function()  {
+//         document.activeElement.scrollIntoViewIfNeeded();
+//         document.activeElement.scrollIntoView();
+//       }, 500);
+//     }
+//   }
 // 阻止页面被拖动
 document.addEventListener(
   "touchmove",

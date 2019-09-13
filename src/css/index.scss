@@ -5,6 +5,7 @@ body {
   padding: 0;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 .load-container {
   position: fixed;
@@ -67,6 +68,8 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
+      overflow: hidden;
+
       width: 100%;
       height: 100%;
       background-repeat: no-repeat;
@@ -341,6 +344,7 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   .swiper-wrapper {
     position: relative;
     display: flex;
