@@ -102,22 +102,6 @@ $("#start_btn").on("click", () => {
 
 var test = document.querySelector(".text-container");
 var pg5 = document.querySelector(".page5");
-// $("input").on("blur",function(){
-//     setTimeout(function(){
-//         // oneSwiper.slideNext(0)
-//     },100)
-// })
-// .on('focus',function(){
-//   this.scrollIntoViewIfNeeded();
-//   this.scrollIntoView();
-//     var clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
-//     var offsetTop = $(this).offset().top - (clientHeight / 4);
-//     setTimeout(function(){
-//         window.scrollTo(0,offsetTop);
-//         document.activeElement.scrollIntoViewIfNeeded();
-//           document.activeElement.scrollIntoView();
-//     },100)
-// })
 $("input")
   .on("focus", function() {
     setTimeout(function() {
