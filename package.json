@@ -5,7 +5,7 @@
   "author": "leon <156555189@qq.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack-dev-server --disableHostCheck true --open --contentBase src --hot"
+    "dev": "webpack-dev-server --host 10.9.88.59 --disableHostCheck true --contentBase src --hot"
   },
   "keywords": [],
   "description": "",

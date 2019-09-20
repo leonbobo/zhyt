@@ -7,23 +7,16 @@ import "./css/index.scss";
 import $ from "jquery";
 import swiper from "swiper";
 
+// load画面
+load()
+function load(){
+  setTimeout(()=>{
+    oneSwiper.init()
+    $('.load-container').hide()
+    oneSwiper.slideTo(0)
+  },1000)
+}
 // 第一模块
-const heightOutput = document.querySelector("#height");
-const widthOutput = document.querySelector("#width");
-
-function reportWindowSize() {
-  heightOutput.textContent = window.innerHeight;
-  widthOutput.textContent = window.innerWidth;
-}
-window.addEventListener("resize", reportWindowSize);
-load();
-function load() {
-  $("body").css("overflow", "hidden");
-  setTimeout(() => {
-    $(".load-container").hide(500);
-    oneSwiper.init();
-  }, 1000);
-}
 
 var oneSwiper = new swiper(".swiper-one", {
   direction: "vertical",
@@ -46,7 +39,9 @@ var oneSwiper = new swiper(".swiper-one", {
       if ((this.activeIndex != 0) | 2) this.allowSlidePrev = true;
       else this.allowSlidePrev = false;
     },
-    slideChange: function() {}
+    slideChange: function() {
+      if (this.activeIndex == 3) twoSwiper.init();
+    }
   }
 });
 
@@ -55,6 +50,7 @@ var oneSwiper = new swiper(".swiper-one", {
 var twoSwiper = new swiper(".swiper-two", {
   direction: "horizontal",
   effect: "coverflow",
+  init: false,
   coverflowEffect: {
     rotate: 30,
     stretch: 0,
@@ -77,8 +73,7 @@ var twoSwiper = new swiper(".swiper-two", {
     slideChangeTransitionEnd: function() {},
     slideChange: function() {
       var slideIndex = (this.activeIndex % 4) + 1;
-      var imgPath =
-        "url('./images/page5/封面" + slideIndex + ".png') no-repeat";
+      var imgPath = `url('./images/page5/封面${slideIndex}.png') no-repeat`;
       $(".page5 .text-container").css({
         background: imgPath,
         "background-size": "100%"
@@ -87,17 +82,60 @@ var twoSwiper = new swiper(".swiper-two", {
   }
 });
 
-$(".sign").on("change", function() {
-  this.value = "— " + this.value.replace("— ", "");
-});
 $(".makepic").on("click", () => {
-  var toIndex = (twoSwiper.activeIndex % 4) + 5;
-  oneSwiper.slideTo(toIndex);
+  if(!$(".sign input").val()) {
+    $('.toast').fadeIn().fadeOut()
+    return
+  }
+  drawImageToPage($(".page6"));
 });
+
+function drawImageToPage(page) {
+  var toIndex = twoSwiper.activeIndex % 4 + 1;
+  var c = document.createElement("canvas");
+  var ctx = c.getContext("2d");
+  var img = new Image();
+  img.crossOrigin = "Anonymous"; //解决跨域
+  img.src = `./images/bg${toIndex}.jpg`;
+  oneSwiper.slideNext(0);
+  img.onload = function() {
+    c.width = img.width;
+    c.height = img.height;
+    var fsize = c.width / 30;
+    var textContent = [];
+    $('input[class^="text-line"]').each(function(i) {
+      textContent.push($(this).val());
+    });
+    ctx.rect(0, 0, c.width, c.height);
+    ctx.drawImage(img, 0, 0, c.width, c.height);
+    ctx.fillStyle = toIndex % 2 ? "#eee" : "#000";
+    var textX = c.width / 5;
+    var textY = c.height * (5 / 9);
+    for (var l = 0; l < textContent.length; l++) {
+      ctx.textAlign = "left";
+      ctx.font = `${fsize + "px"} sans-serif`;
+      if (!l) {
+        ctx.font = `${fsize + 10 + "px"} sans-serif`;
+        ctx.fillText(textContent[l], textX + 50, textY + l * 70);
+      } else if (l == textContent.length-1) {
+        ctx.textAlign = "right";
+        ctx.fillText("—" + textContent[l], c.width-textX, textY + l * 70);
+      } else {
+        ctx.fillText(textContent[l], textX, textY + l * 70);
+      }
+    }
+    var cimg = document.createElement("img");
+    cimg.src = c.toDataURL("image/jpeg", 0.8);
+    cimg.style.width = "100%";
+    // cimg.style.zIndex = 66;
+    page.append(cimg);
+    $(".loadCon").hide()
+    $(".save").show()
+  };
+}
 
 $("#start_btn").on("click", () => {
   oneSwiper.slideNext(0);
-  twoSwiper.init();
 });
 
 var test = document.querySelector(".text-container");
@@ -116,16 +154,6 @@ $("input")
     }, 100);
   });
 
-// function changefocus(){
-//     var u =  navigator.userAgent, app =  navigator.appVersion;
-//     var isAndroid =  u.indexOf('Android') > -1 ||  u.indexOf('Linux') > -1;
-//     if(isAndroid){
-//       setTimeout(function()  {
-//         document.activeElement.scrollIntoViewIfNeeded();
-//         document.activeElement.scrollIntoView();
-//       }, 500);
-//     }
-//   }
 // 阻止页面被拖动
 document.addEventListener(
   "touchmove",

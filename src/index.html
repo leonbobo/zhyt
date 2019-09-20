@@ -11,17 +11,20 @@
     <meta content="telephone=no" name="format-detection" />
     <meta content="email=no" name="format-detection" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./css/load.css">
     <script src="./js/swiper.animate1.0.3.min.js"></script>
     <title>中秋贺卡</title>
   </head>
   <body>
+    <!-- 第一模块 -->
     <div class="load-container">
-      <div class="load-warrper">
+      <div class="load-warpper">
         <div class="load-icon"></div>
-        <div class="load-title">加载中</div>
+        <div class="load-title">
+          载入中···
+        </div>
       </div>
     </div>
-    <!-- 第一模块 -->
     <div class="swiper-container swiper-one">
       <div class="swiper-wrapper">
         <!-- 第一页 -->
@@ -40,7 +43,7 @@
               data-src="./images/page1/pg1-思考.png"
               class="swiper-lazy ani think-container"
               swiper-animate-effect="fadeIn"
-              swiper-animate-duration="0.5s"
+              swiper-animate-duration="2s"
               swiper-animate-delay="0.3s"
             />
             <div class="swiper-lazy-preloader"></div>
@@ -49,7 +52,7 @@
               data-src="./images/page1/辛苦了大半年.png"
               class="swiper-lazy ani think-content"
               swiper-animate-effect="fadeIn"
-              swiper-animate-duration="0.5s"
+              swiper-animate-duration="2s"
               swiper-animate-delay="0.3s"
             />
             <div class="swiper-lazy-preloader"></div>
@@ -57,7 +60,6 @@
 
           <img
             data-src="./images/箭头.png"
-            alt="箭头"
             class="swiper-lazy arrows ani"
             swiper-animate-effect="slideInDown"
             swiper-animate-duration="1s"
@@ -147,7 +149,6 @@
 
           <img
             data-src="./images/箭头.png"
-            alt="箭头"
             class="swiper-lazy arrows ani"
             swiper-animate-effect="slideInDown"
             swiper-animate-duration="1s"
@@ -216,7 +217,6 @@
 
           <img
             data-src="./images/箭头.png"
-            alt="箭头"
             class="swiper-lazy arrows ani"
             swiper-animate-effect="slideInDown"
             swiper-animate-duration="1s"
@@ -240,7 +240,6 @@
 
           <img
             data-src="./images/page4/飞鸽传书.png"
-            alt="鸽子"
             class="swiper-lazy bird ani"
             swiper-animate-effect="fadeInLeft"
             swiper-animate-duration="0.5s"
@@ -269,7 +268,6 @@
 
           <img
             data-src="./images/page4/开始定制家书.png"
-            alt="家书"
             class="swiper-lazy makebook ani "
             id="start_btn"
             swiper-animate-effect="pulse"
@@ -288,7 +286,6 @@
 
           <img
             data-src="./images/page5/按钮.png"
-            alt="家书"
             class="swiper-lazy makepic ani "
             id="start_btn"
             swiper-animate-effect="pulse"
@@ -311,7 +308,7 @@
             class="swiper-lazy bird"
           />
           <div class="swiper-lazy-preloader"></div>
-
+          <div class="toast" style="display: none;z-index: 99;">请附赠言并署名</div>
           <div class="text-container">
             <input
               type="text"
@@ -319,15 +316,15 @@
               placeholder="输 入 你 想 说 的 话"
               maxlength="13"
             />
-            <input type="text"  class="text-line2" maxlength="15" />
+            <input type="text" class="text-line2" maxlength="15" />
             <input type="text" class="text-line3" maxlength="15" />
             <input type="text" class="text-line4" maxlength="15" />
+            <form class="sign">署名:
             <input
               type="text"
-              placeholder="— 署名 "
               maxlength="4"
-              class="sign text-line5"
-            />
+              class="text-line5"
+            /></form>
           </div>
 
           <div id="select-pic">
@@ -369,24 +366,30 @@
 
         <!-- 第六页 -->
         <div class="swiper-slide  page6 swiper-no-swiping">
-          <img data-src="./images/bg1.jpg" class="swiper-lazy" width="100%" />
-          <div class="swiper-lazy-preloader"></div>
+          <div class="loadCon">
+            <img src="./images/loading.png" class="loadImg" />
+            <h3>书信制作中···</h3>
+          </div>
+          <span class="save">长按保存图片</span>
+
+          <!-- <img data-src="./images/bg1.jpg" class="swiper-lazy" width="100%" />
+          <div class="swiper-lazy-preloader"></div> -->
         </div>
         <!-- 第七页 -->
-        <div class="swiper-slide  page7 swiper-no-swiping">
+        <!-- <div class="swiper-slide  page7 swiper-no-swiping">
           <img data-src="./images/bg2.jpg" class="swiper-lazy" width="100%" />
           <div class="swiper-lazy-preloader"></div>
-        </div>
+        </div> -->
         <!-- 第八页 -->
-        <div class="swiper-slide page8 swiper-no-swiping">
+        <!-- <div class="swiper-slide page8 swiper-no-swiping">
           <img data-src="./images/bg3.jpg" class="swiper-lazy" width="100%" />
           <div class="swiper-lazy-preloader"></div>
-        </div>
+        </div> -->
         <!-- 第九页 -->
-        <div class="swiper-slide page9 swiper-no-swiping">
+        <!-- <div class="swiper-slide page9 swiper-no-swiping">
           <img data-src="./images/bg4.jpg" class="swiper-lazy" width="100%" />
           <div class="swiper-lazy-preloader"></div>
-        </div>
+        </div> -->
       </div>
     </div>
   </body>
